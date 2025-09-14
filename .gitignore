@@ -17,5 +17,5 @@ __pycache__/
 *.wav
 
 # Test images that shouldn't be in the repository
-*.jpg
-*.png
+# *.jpg
+# *.png
