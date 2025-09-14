@@ -1,0 +1,21 @@
+# Environment variables and secrets
+# --- DO NOT EVER COMMIT THIS FILE ---
+.env
+
+# Python generated files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment folder
+.venv/
+*.venv
+
+# Temporary output files from your scripts
+*.mp3
+*.wav
+
+# Test images that shouldn't be in the repository
+*.jpg
+*.png
