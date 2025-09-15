@@ -10,6 +10,8 @@ elevenlabs = "*"
 gradio = "*"
 fastapi = "*"
 uvicorn = "*"
+speechrecognition = "*"
+pyttsx3 = "*"
 
 [dev-packages]
 
