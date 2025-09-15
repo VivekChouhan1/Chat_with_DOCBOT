@@ -46,8 +46,8 @@ iface = gr.Interface(
         gr.Image(type="filepath")
     ],
     outputs=[
-        gr.Textbox(label="Speech to Text"),
-        gr.Textbox(label="Doctor's Response"),
+        gr.Textbox(label="Speech to Text",lines=3),
+        gr.Textbox(label="Doctor's Response", lines=6),
         gr.Audio("Temp.mp3")
     ],
     title="Chat With DOCBOT"
