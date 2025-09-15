@@ -1,6 +1,6 @@
 #step 1: steups text to speech model(GTTS or ElevenLabs)
 
-#option a:(TTS with gTTS)                                    (NOT WORKING RIGHT-NOW)
+#option a:(TTS with gTTS)                                  
 # import os
 # from gtts import gTTS
 
@@ -15,19 +15,19 @@
 #     audioobj.save(output_filepath)   #audio object jo mila haia... usko output file me store karenge
 
 # #testing
-# input_text="Hi hello how are you? ,, this is vivek"
+# input_text="Hi hello how are you?"
 # text_to_speech_with_gtts_old(input_text=input_text, output_filepath="gtts_testing.mp3")
 
 
 #option a (part 2): (TTS with pyttsx3)  //python based local service
 
-#install pyttsx3 ... by pipenv install pyttsx3
+# install pyttsx3 ... by pipenv install pyttsx3
 import pyttsx3
 
-def text_to_speech_with_pyttsx3_old(input_text, output_filepath):  #old isliye kykoi.. ab hum step 3 me copy kiya hai inko
-    engine = pyttsx3.init()  # Initialize the TTS engine
-    engine.save_to_file(input_text, output_filepath)  # Save speech to file
-    engine.runAndWait()  # Process the voice command
+# def text_to_speech_with_pyttsx3_old(input_text, output_filepath):  #old isliye kykoi.. ab hum step 3 me copy kiya hai inko
+#     engine = pyttsx3.init()  # Initialize the TTS engine
+#     engine.save_to_file(input_text, output_filepath)  # Save speech to file
+#     engine.runAndWait()  # Process the voice command
 
 #testing
 # input_text = "Hi hello how are you? ,, this is vivek"
@@ -74,6 +74,33 @@ def text_to_speech_with_elevenlabs_old(input_text, output_filepath):
 import subprocess
 import platform #ye pata karega .. ki kis plateform (Mac, window or linux) par use ho raha hai
 
+# #GTTS 
+# def text_to_speech_with_gtts_new(input_text, output_filepath):
+#     language="en"
+
+#     audioobj= gTTS(
+#         text=input_text,
+#         lang=language,
+#         slow=False
+#     )
+#     audioobj.save(output_filepath)
+#     os_name = platform.system()
+#     try:
+#         if os_name == "Darwin":  # macOS
+#             subprocess.run(['afplay', output_filepath])
+#         elif os_name == "Windows":  # Windows
+#             subprocess.run(['powershell', '-c', f'(New-Object Media.SoundPlayer "{output_filepath}").PlaySync();'])
+#         elif os_name == "Linux":  # Linux
+#             subprocess.run(['aplay', output_filepath])  # Alternative: use 'mpg123' or 'ffplay'
+#         else:
+#             raise OSError("Unsupported operating system")
+#     except Exception as e:
+#         print(f"An error occurred while trying to play the audio: {e}")
+
+
+# input_text = "Hi hello how are you? ,, this is vivek"
+# text_to_speech_with_gtts_new(input_text=input_text, output_filepath="gtts_testing.mp3")
+
 def text_to_speech_with_pyttsx3_new(input_text, output_filepath): 
     engine = pyttsx3.init()  # Initialize the TTS engine
     engine.save_to_file(input_text, output_filepath)  # Save speech to file
@@ -91,9 +118,12 @@ def text_to_speech_with_pyttsx3_new(input_text, output_filepath):
     except Exception as e:
         print(f"An error occurred while trying to play the audio: {e}")
 
-#testing pyttsx3
+# testing pyttsx3
 # input_text = "Hi hello how are you? ,, this is vivek"
 # text_to_speech_with_pyttsx3_new(input_text=input_text, output_filepath="pyttsx3_testing.mp3")
+
+
+
 
 
                               #NOT IN USE.. SOME ERROR IN THIS FUNCTION

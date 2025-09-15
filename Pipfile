@@ -12,6 +12,7 @@ fastapi = "*"
 uvicorn = "*"
 speechrecognition = "*"
 pyttsx3 = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
