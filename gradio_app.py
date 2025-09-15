@@ -1,6 +1,6 @@
 import os
 import gradio as gr
-
+from fastapi import FastAPI  #used for vercel deployement
 
 #sabhi function ka data yaha manga lo
 from brain_of_the_doctor import encode_image, analyze_image_with_query
@@ -48,9 +48,12 @@ iface = gr.Interface(
     outputs=[
         gr.Textbox(label="Speech to Text",lines=3),
         gr.Textbox(label="Doctor's Response", lines=6),
-        gr.Audio("Temp.mp3")
+        gr.Audio(label="Doctor's Voice")
     ],
     title="Chat With DOCBOT"
 )
 
-iface.launch(debug=True)
+# iface.launch(debug=True)
+# Create a FastAPI app and mount the Gradio interface
+app = FastAPI()
+app = gr.mount_gradio_app(app, iface, path="/")
